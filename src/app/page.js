@@ -83,7 +83,7 @@ export default function Home() {
   useEffect(() => {
     if (!audioRef.current) return;
 
-    const audio = audioRef.current;
+    const audio = audioRef.c urrent;
 
     const tryPlay = () => {
       audio.play().catch(() => { });
