@@ -72,11 +72,42 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Particles } from "../components/ui/shadcn-io/particles";
 import { SparklesCore } from "../components/ui/shadcn-io/sparkles";
+import { useEffect, useRef } from 'react';
 export default function Home() {
-  const router = useRouter();
 
+
+  const router = useRouter();
+  const audioRef = useRef(null);
+
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    const audio = audioRef.current;
+
+    const tryPlay = () => {
+      audio.play().catch(() => { });
+      document.removeEventListener('click', tryPlay);
+    };
+
+    tryPlay();
+    document.addEventListener('click', tryPlay);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+      document.removeEventListener('click', tryPlay);
+    };
+  }, []);
   return (
     <div className="relative h-screen w-screen bg-[#786d51] overflow-hidden">
+      <audio
+        ref={audioRef}
+        src="/audio.mp3"
+        loop
+        preload="auto"
+        playsInline
+      />
       {/* Background Image – NO CROP */}
       <Image
         src="/skoposMainPageEmpty.png"
