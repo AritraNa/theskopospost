@@ -100,7 +100,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className="relative h-screen w-screen bg-[#786d51] overflow-hidden">
+    <div className="relative h-screen w-screen overflow-hidden">
       <audio
         ref={audioRef}
         src="/audio.mp3"
@@ -110,70 +110,20 @@ export default function Home() {
       />
       {/* Background Image – NO CROP */}
       <Image
-        src="/skoposMainPageEmpty.png"
+        src="/skoposmainpage.jpeg"
         alt="Background"
         fill
         priority
-        className="left-[50%] object-cover grayscale brightness-60"
+        className="left-[50%] object-cover"
       />
-      <div className="
-      object-contain 
-      w-[30rem] 
-      h-[35rem] 
-      relative 
-      top-67 
-      left-[50%] 
-      -translate-x-1/2 
-      z-40 
-      clip-lamp-light 
-      ">
-        {/* Gradients  */}
-        {/* 
 
-      [mask-image:radial-gradient(circle,white_15%,transparent_0%)]
-
-        [mask-image:radial-gradient(300px_200px_at_top_right,white_0%,transparent_80%)]
-
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" /> */}
-        {/* Core component */}
-        {/* <SparklesCore
-          background="transparent"
-          className="w-full h-full "
-          maxSize={1.8}
-          minSize={0.4}
-          particleColor="#cbc8c1"
-          particleDensity={30}
-        /> */}
-        {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-5 ">
-          <div className="
-          w-full 
-          h-full
-          bg-[#cbc8c1f3]
-          blur-md
-      animate-lampFlicker
-          [mask-image:radial-gradient(8rem_20rem_at_top,white_0%,transparent_100)]
-          " />
-        </div>
-      </div>
-      <Image
-        src="/manInChair.webp"
-        alt="Background"
-        fill
-        priority
-        className="object-cover z-30 brightness-55 scale-[0.8] translate-y-63 translate-x-39
-        "
-      />
       <SparklesCore
         background="transparent"
         minSize={0.6}
-        maxSize={2.4}
-        particleDensity={20}
+        maxSize={3.4}
+        particleDensity={5}
         className="absolute inset-0 w-full h-full"
-        particleColor="#cbc8c172"
+        particleColor="#d5c9ae08"
         speed={2}
       />
       <Particles
@@ -183,8 +133,67 @@ export default function Home() {
         quantity={40}
         refresh
       />
+      <div className="
+      fixed 
+      top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      bg-center 
+      "
+        style={{
+          width: '1550px',
+          height: '800px',
+          zIndex: 3
+        }}
+      >
+        <div ></div>
+        <div className=" relative bg-center clip-lamp-light bg-[#fafafa4f] [mask-image:radial-gradient(circle,white_15%,transparent_20%)] h-full w-full "></div>
+      </div>
 
 
+      {/* Gradients  */}
+      {/* 
+        [mask-image:radial-gradient(8rem_20rem_at_top,white_20,transparent_10)]
+
+        absolute
+        object-cover
+        absolute
+        top-[25%] 
+        w-screen
+        h-[60%]
+        object-cover 
+        -translate-x-1/2 
+        z-40 
+        relative 
+
+      [mask-image:radial-gradient(circle,white_15%,transparent_0%)]
+
+        [mask-image:radial-gradient(300px_200px_at_top_right,white_0%,transparent_80%)]
+
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" /> */}
+      {/* Core component */}
+      {/* <SparklesCore
+          background="transparent"
+          className="w-full h-full "
+          maxSize={1.8}
+          minSize={0.4}
+          particleColor="#cbc8c1"
+          particleDensity={30}
+        /> */}
+      {/* Radial Gradient to prevent sharp edges */}
+
+      {/* <Image
+          blur-md
+      [mask-image:radial-gradient(8rem_20rem_at_top,white_0%,transparent_100)]
+        src="/manInChair.webp"
+        alt="Background"
+        fill
+        priority
+        className="object-cover z-30 brightness-55 scale-[0.8] translate-y-63 translate-x-39
+        "
+      /> */}
     </div>
   );
 }
