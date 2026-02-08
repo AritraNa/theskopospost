@@ -103,7 +103,7 @@ export default function Home() {
     <div className="relative h-screen w-screen overflow-hidden">
       <audio
         ref={audioRef}
-        src="/audio.mp3"
+        src="/fireCackle.mp3"
         loop
         preload="auto"
         playsInline
@@ -145,8 +145,8 @@ export default function Home() {
           zIndex: 3
         }}
       >
-        <div ></div>
-        <div className=" relative bg-center clip-lamp-light bg-[#fafafa4f] [mask-image:radial-gradient(circle,white_15%,transparent_20%)] h-full w-full "></div>
+        <div className="fire-place"></div>
+        <div className="clip-lamp-light"></div>
       </div>
 
 
