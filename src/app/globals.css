@@ -99,18 +99,25 @@
   );
   clip-path: polygon(45% 35%, 46.5% 34.4%, 49.3% 41%, 50.7% 33.3%, 47% 19%, 64.5% 63%, 65% 78%, 30% 84%);
 
-
   top: 3.5rem;
   right: 3rem; 
   width: 100%;
   height: 100%;
   animation: lampFlicker 10s linear infinite;
-
 }
 
 .fire-place{
   
 }
+
+.websiteTitle {
+  font-family: 'Meshed-Display', sans-serif;
+  position:fixed;
+  font-size: 2.5rem;
+  color: white;
+  top: 1rem;
+  left: 1rem;
+  text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);}
 
 @keyframes lampFlicker {
   0% {
@@ -231,4 +238,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+@font-face {
+  font-family: 'Meshed-Display';
+  src: url('/fonts/OpenType-TT/MeshedDisplay-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -116,7 +116,13 @@ export default function Home() {
         priority
         className="left-[50%] object-cover"
       />
-
+      <Image
+        src="/user-pfp.png"
+        alt="profile"
+        width={50}
+        height={50}
+        className="fixed z-5 right-5 top-5"
+      />
       <SparklesCore
         background="transparent"
         minSize={0.6}
@@ -133,6 +139,9 @@ export default function Home() {
         quantity={40}
         refresh
       />
+      <div className="websiteTitle">
+        SKOPOS
+      </div>
       <div className="
       fixed 
       top-1/2 left-1/2
@@ -145,55 +154,11 @@ export default function Home() {
           zIndex: 3
         }}
       >
+
         <div className="fire-place"></div>
         <div className="clip-lamp-light"></div>
       </div>
 
-
-      {/* Gradients  */}
-      {/* 
-        [mask-image:radial-gradient(8rem_20rem_at_top,white_20,transparent_10)]
-
-        absolute
-        object-cover
-        absolute
-        top-[25%] 
-        w-screen
-        h-[60%]
-        object-cover 
-        -translate-x-1/2 
-        z-40 
-        relative 
-
-      [mask-image:radial-gradient(circle,white_15%,transparent_0%)]
-
-        [mask-image:radial-gradient(300px_200px_at_top_right,white_0%,transparent_80%)]
-
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" /> */}
-      {/* Core component */}
-      {/* <SparklesCore
-          background="transparent"
-          className="w-full h-full "
-          maxSize={1.8}
-          minSize={0.4}
-          particleColor="#cbc8c1"
-          particleDensity={30}
-        /> */}
-      {/* Radial Gradient to prevent sharp edges */}
-
-      {/* <Image
-          blur-md
-      [mask-image:radial-gradient(8rem_20rem_at_top,white_0%,transparent_100)]
-        src="/manInChair.webp"
-        alt="Background"
-        fill
-        priority
-        className="object-cover z-30 brightness-55 scale-[0.8] translate-y-63 translate-x-39
-        "
-      /> */}
     </div>
   );
 }
