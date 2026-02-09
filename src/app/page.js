@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
 
 // export default function Home() {
@@ -72,7 +73,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Particles } from "../components/ui/shadcn-io/particles";
 import { SparklesCore } from "../components/ui/shadcn-io/sparkles";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 export default function Home() {
 
 
@@ -99,8 +100,13 @@ export default function Home() {
       document.removeEventListener('click', tryPlay);
     };
   }, []);
+
+
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div
+      className="front-page relative w-full h-screen overflow-hidden"
+
+    >
       <audio
         ref={audioRef}
         src="/fireCackle.mp3"
@@ -108,21 +114,126 @@ export default function Home() {
         preload="auto"
         playsInline
       />
-      {/* Background Image – NO CROP */}
-      <Image
-        src="/skoposmainpage.jpeg"
-        alt="Background"
-        fill
-        priority
-        className="left-[50%] object-cover"
-      />
-      <Image
-        src="/user-pfp.png"
-        alt="profile"
-        width={50}
-        height={50}
-        className="fixed z-5 right-5 top-5"
-      />
+
+      <div className="relative inline-block">
+        <img
+          src="/skoposmainpage.jpeg"
+          alt="background"
+          className="block w-auto h-auto"
+        />
+        <Particles
+          className="absolute inset-0 z-30 pointer-events-none"
+          color="#cbc8c158"
+          ease={10}
+          quantity={40}
+          refresh
+        />
+        <SparklesCore
+          background="transparent"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          maxSize={1.8}
+          minSize={0.4}
+          particleColor="#cbc8c1"
+          particleDensity={30}
+        />
+        <div className="absolute inset-0 w-full h-full fire-place-red">
+          <SparklesCore
+            background="transparent"
+            className="w-full h-full "
+            maxSize={4.8}
+            minSize={0.4}
+            particleColor="#d18e6f"
+            particleDensity={10}
+          />
+        </div>
+        <div className="absolute inset-0 w-full h-full fire-place-yellow">
+          <SparklesCore
+            background="transparent"
+            className="w-full h-full "
+            maxSize={2.8}
+            minSize={0.4}
+            particleColor="#deaa27"
+            particleDensity={10}
+          />
+        </div>
+        <div className="absolute inset-0 w-full h-full clip-lamp-light">
+          <SparklesCore
+            background="transparent"
+            className="w-full h-full "
+            maxSize={4.8}
+            minSize={0.4}
+            particleColor="#b1ab9b"
+            particleDensity={60}
+          />
+
+        </div>
+        <img
+          src="/skoposwhitelogo.png"
+          alt="logo"
+          width={90}
+          height={90}
+          className="fixed z-5 left-5 top-5"
+        />
+        <img
+          src="/user-pfp.png"
+          alt="profile"
+          width={40}
+          height={40}
+          className="fixed z-5 right-5 top-5"
+        />
+
+        {/* <div className="
+      fixed 
+      top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      bg-center 
+      
+      border border-black
+      "
+          style={{
+            aspectRatio: "3/2",
+            zIndex: 3
+          }}
+        >
+          
+          
+        </div> */}
+
+      </div>
+
+
+
+      {/* <div className="
+      fixed 
+      top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      bg-center 
+      
+      border border-black
+      "
+        style={{
+          aspectRatio: "3/2",
+          zIndex: 3
+        }}
+      >
+        <div className="clip-lamp-light">
+          <div className="fire-place"></div> 
+          <SparklesCore
+            background="transparent"
+            className="w-full h-full "
+            maxSize={1.8}
+            minSize={0.4}
+            particleColor="#cbc8c1"
+            particleDensity={30}
+          />
+        </div>
+      </div> */}
+
+      {/* 
+      
+
+
+
       <SparklesCore
         background="transparent"
         minSize={0.6}
@@ -138,27 +249,10 @@ export default function Home() {
         ease={10}
         quantity={40}
         refresh
-      />
-      <div className="websiteTitle">
-        SKOPOS
-      </div>
-      <div className="
-      fixed 
-      top-1/2 left-1/2
-      -translate-x-1/2 -translate-y-1/2
-      bg-center 
-      "
-        style={{
-          width: '1550px',
-          height: '800px',
-          zIndex: 3
-        }}
-      >
+      /> */}
 
-        <div className="fire-place"></div>
-        <div className="clip-lamp-light"></div>
-      </div>
 
-    </div>
+    </div >
+
   );
 }
